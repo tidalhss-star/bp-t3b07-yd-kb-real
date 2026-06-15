@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2011 년 겨울, 이누카에가 아직 숨죽이던 그날 밤의 시계탑</title>
+  <link rel="canonical" href="https://tidalhss-star.github.io/bp-t3b07-yd-kb-real/posts/interview-002-1ndg0fx.html">
+  <style>
+    body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+    h1 { font-family: serif; color: #111; margin-bottom: 0.5em; }
+    h2 { font-size: 1.4em; margin: 1.5em 0 0.5em; color: #222; }
+    h3 { font-size: 1.15em; margin: 1.2em 0 0.4em; color: #444; }
+    p { margin: 0 0 1em; }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← 목록으로 돌아가기</a>
+  </header>
+  <main>
+    <h1>2011 년 겨울, 이누카에가 아직 숨죽이던 그날 밤의 시계탑</h1>
+    <article>
+      <p>## 초기 버전과 출시 버전의 벽면 상호작용</p>
+<p>Q: 데모판 시절에는 어떤 방식이 더 유리했나요?<br>A: 저는 당시 개발 로그를 훑어보다니, `Firelink Shrine` 내벽 점프 조건이 살짝 다릅니다. 2011 년 초판에서 특정 프레임 단위로 입력 시 골목 통로가 열렸지만, 최종 패치 이후에는 그 틈새가 좁혀졌습니다. ^^;</p>
+<p><img src="../assets/bpaas_00007_.png" alt="Dark Souls 1 Demo Version vs Release Version Map Comparison" loading="lazy" width="1344" height="768"></p>
+<p>A 의 해석: 기술적으로 볼 때 `Frame-perfect` 입력 타이밍이 변하지 않았다면, 아마도 `Collision Box`(충돌 박스) 의 재배치로 인해 물리 엔진 계산 값에 미세한 오차가 생겼을 거예요.</p>
+<p>Q: 왜 이러한 변화가 속도 기록에 영향을 미친다고 하죠?<br>A: 저도 궁금했답니다. 데모판의 특정 구간에서는 `Soul Link` 보너스 아이템이 더 자주 등장했고, 이를 이용해 병사들을 우회할 수 있었습니다. 하지만 출시 후 그 패턴이 무작위화되어 일정한 스킵 루트가 불안정해졌죠. ^^</p>
+<p>## 패치로 막힌 프레임 단위 재현 조건</p>
+<p>Q: 구체적으로 어떤 버전에서 문제가 발생했는지 알려주세요.<br>A: `v1.05` 이후 패치가 적용되면서, 초기 버전의 특정 벽면 점프가 `Input Buffer`(입력 버퍼) 에 저장되는 시간이 단축되었습니다. 즉, 같은 조작이라도 3 프레임만 늦으면 경로 탐색이 실패하는 상태죠.</p>
+<p><img src="../assets/bpaas_00128_.png" alt="Dark Souls 1 Speedrun Glitch Skip Conditions" loading="lazy" width="1024" height="1024"></p>
+<p>A 의 해석: 이는 단순히 조작 실수가 아니라, 엔진의 내부 로직이 업데이트되면서 `Physics State`(물리 상태) 가 재정의된 결과입니다. 여러분은 이를 단순한 버그가 아닌 '새로운 규칙'으로 받아들이시면 좋겠습니다. ^^;</p>
+<p>결말에 남기는 확인 질문<br>1.  현재 자신의 플레이 스타일에 맞춰 데모판 데이터를 참고하고 있나요?<br>2.  특정 구간에서 `Wall Jump`(벽 점프) 가 실패할 때, 입력 타이밍을 체크해 보신 적 있으세요?<br>3.  다음 업데이트 시 이러한 물리 엔진 변화가 다시 발생할 가능성이 궁금하지 않으신가요? ^^</p>
+    </article>
+  </main>
+</body>
+</html>
