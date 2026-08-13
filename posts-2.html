@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b07-yd-kb-real</title>
+  <meta name="description" content="t3b07-yd-kb-real에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://yeouido-song-trend.program-school.online/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ html { font-size: 16px; scroll-behavior: smooth; }
+ body { 
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+ background-color: #0a0a0a; 
+ color: #e5e5e5; 
+ line-height: 1.6; 
+ -webkit-font-smoothing: antialiased;
+ }
+ a { color: #d4af37; text-decoration: none; transition: opacity 0.2s; }
+ a:hover { opacity: 0.7; }
+ img, svg { max-width: 100%; display: block; }
+ .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+ /* 헤더 & 네비게이션 */
+ header { 
+ border-bottom: 1px solid #2a2a2a; 
+ background: rgba(10, 10, 10, 0.85); 
+ backdrop-filter: blur(12px); 
+ position: sticky; top: 0; z-index: 100;
+ }
+ .header-inner { 
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ height: 64px; 
+ }
+ .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: 2px; text-transform: uppercase; }
+ .logo span { color: #d4af37; }
+ nav.desktop-nav { display: flex; gap: 32px; font-size: 0.9rem; font-weight: 500; }
+ nav.desktop-nav a { color: #b0b0b0; letter-spacing: 0.5px; }
+ nav.desktop-nav a:hover { color: #d4af37; }
+
+ /* 햄버거 */
+ .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 4px; }
+ .hamburger span { width: 28px; height: 2px; background: #d4af37; border-radius: 2px; transition: all 0.3s; }
+
+ /* 모바일 네비 */
+ .mobile-nav { 
+ display: none; 
+ position: absolute; top: 64px; left: 0; width: 100%; 
+ background: #111; border-bottom: 1px solid #2a2a2a; 
+ padding: 20px 24px; flex-direction: column; gap: 20px;
+ }
+ .mobile-nav a { color: #b0b0b0; font-size: 1.1rem; font-weight: 500; letter-spacing: 0.5px; }
+ .mobile-nav.active { display: flex; }
+
+ /* 히어로 */
+ .hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid #1f1f1f; }
+ .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+ .hero h1 span { color: #d4af37; }
+ .hero p { font-size: 1.15rem; color: #a0a0a0; max-width: 640px; margin: 20px auto 0; }
+
+ /* 메인 콘텐츠 */
+ .content-section { padding: 60px 0; }
+ .blog-card { 
+ background: #121212; 
+ border-radius: 20px; 
+ padding: 40px; 
+ border: 1px solid #2a2a2a; 
+ margin-bottom: 40px;
+ box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+ }
+ .blog-card h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.3px; }
+ .blog-card h2 i { color: #d4af37; font-style: normal; }
+ .blog-card .meta { color: #6b6b6b; font-size: 0.85rem; margin-bottom: 24px; border-bottom: 1px solid #222; padding-bottom: 12px; }
+ .blog-card p { font-size: 1.05rem; color: #ccc; margin-bottom: 20px; }
+ .blog-card strong { color: #f0e6d2; }
+ .blog-card .highlight { background: #1e1e1e; padding: 20px; border-left: 4px solid #d4af37; border-radius: 8px; margin: 28px 0; }
+ .blog-card .highlight p { margin-bottom: 0; }
+ .blog-card .rating { display: flex; gap: 8px; align-items: center; margin: 24px 0; }
+ .blog-card .rating .stars { color: #d4af37; font-size: 1.3rem; letter-spacing: 2px; }
+ .blog-card .rating .score { font-weight: 700; font-size: 1.2rem; color: #f0e6d2; }
+
+ .faq { margin-top: 48px; }
+ .faq h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 24px; color: #d4af37; }
+ .faq-item { border-bottom: 1px solid #222; padding: 18px 0; }
+ .faq-item strong { display: block; font-size: 1.05rem; margin-bottom: 6px; color: #f0e6d2; }
+ .faq-item p { margin: 0; color: #a8a8a8; font-size: 0.95rem; }
+
+ /* 푸터 */
+ footer { padding: 32px 0; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+ .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #5a5a5a; }
+ .footer-inner a { color: #5a5a5a; }
+ .footer-inner a:hover { color: #d4af37; }
+
+ /* 반응형 */
+ @media (max-width: 768px) {
+ .hamburger { display: flex; }
+ nav.desktop-nav { display: none; }
+ .hero h1 { font-size: 2.2rem; }
+ .blog-card { padding: 24px; }
+ .blog-card h2 { font-size: 1.4rem; }
+ .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b07-yd-kb-real">
+  <meta property="og:description" content="t3b07-yd-kb-real에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://yeouido-song-trend.program-school.online/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container header-inner">
+ <div class="logo"><span>✦</span> 노이어 <span>골드</span></div>
+ <nav class="desktop-nav">
+ <a href="/">홈</a>
+ <a href="/blog">블로그</a>
+ <a href="/about">시그니처</a>
+ <a href="/contact">컨택</a>
+ </nav>
+ <div class="hamburger" onclick="toggleMobileNav()">
+ <span></span><span></span><span></span>
+ </div>
+ </div>
+ <div class="mobile-nav" id="mobileNav">
+ <a href="/">홈</a>
+ <a href="/blog">블로그</a>
+ <a href="/about">시그니처</a>
+ <a href="/contact">컨택</a>
+ </div>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 40개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0323.html">여의도 노래방 내돈내산 데이터로 확인하는 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">사이트의 콘텐츠가 검색 결과에 빠르게 노출되기 위해서는 안정적인 서버 응답, 최적화된 이미지 용량, 그리고 간결한 코드 구조라는 세 가지 충족 조건이 필수입니다. 여의도 노래방 내돈내산 콘텐츠를 작</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0324.html">여의도 노래방 내돈내산 이후 고민되는 구글 신뢰 지수 모발이식 솔루션의 중요성</a>
+        <p class="post-item__summary">당신은 운영하는 블로그나 비즈니스 사이트가 검색 엔진에서 정당한 평가를 받고 있다고 확신하십니까? 여의도 노래방 내돈내산 후기를 작성하며 브랜드의 신뢰도라는 것이 하루아침에 쌓이는 것이 아님을 다시</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0419.html">여의도 노래방 내돈내산 경험으로 정리한 공덕 가라오케 추천정보</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 후기를 살펴보다 보면 인원 구성에 따른 공간 확보가 가장 중요하다는 점을 알 수 있습니다. 단체 회식이나 소규모 모임 등 인원수에 맞는 적절한 크기의 룸을 선택해야 즐거운 시</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0420.html">여의도 노래방 내돈내산 이후 찾는 상수 마사지 추천정보 비교 기준</a>
+        <p class="post-item__summary">혹시 여의도 노래방 내돈내산 경험처럼 마사지 숍을 고를 때도 고민이 많으신가요? 많은 분이 가격만을 기준으로 업체를 선정하지만 실제로는 관리사의 숙련도와 위생 상태가 훨씬 중요한 평가 기준이 됩니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0421.html">여의도 노래방 내돈내산 절차에 따른 망원 노래방 추천정보 신뢰 판별</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 경험을 토대로 노래방을 선택할 때 가장 먼저 후기의 신뢰성을 판별하는 단계가 필요합니다. 1단계로 해당 글이 개인의 경험에 기반한 것인지, 아니면 마케팅을 목적으로 작성된 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0422.html">여의도 노래방 내돈내산 경험으로 비교해보는 홍대 노래방 추천정보 분석</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 경험을 통해 얻은 데이터는 홍대 지역을 방문할 때 중요한 비교 기준이 됩니다. 두 지역은 각각의 문화적 특성이 뚜렷하여 노래방을 선택하는 소비자들의 우선순위도 다르게 나타납니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0423.html">여의도 노래방 내돈내산 후기가 알려주는 공덕 셔츠룸 추천정보 예약 주의사항</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 경험을 토대로 보면 유흥 업소 방문 시 많은 이들이 실패하는 지점은 준비 없이 방문하는 것입니다. 특히 예약 절차를 소홀히 하면 원하는 시간에 방을 확보하지 못하거나 불투명한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0424.html">여의도 노래방 내돈내산 경험 기반 연남 유흥 추천정보 확인을 위한 체크리스트</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 경험을 돌이켜보면 연남 지역으로 이동할 때 가장 먼저 고려해야 할 요소는 역시 접근성입니다. 유흥 문화를 즐기기 위해서는 위치 선정만큼 중요한 것이 없으며, 지하철역이나 대중</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0425.html">여의도 노래방 내돈내산 경험으로 본 마곡 가라오케 추천정보 가이드</a>
+        <p class="post-item__summary">오랜만에 동료들과 저녁 모임을 마치고 여의도 노래방 내돈내산 후기들을 검색하며 밤거리를 배회하던 경험이 있습니다. 생각보다 복잡한 환경 탓에 당황했던 기억을 되살려 보면, 정보 없이 무작정 방문하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0426.html">여의도 노래방 내돈내산 후기로 분석한 마곡 유흥 추천정보와 전략</a>
+        <p class="post-item__summary">많은 이들이 유흥 업소는 무조건 밤늦은 시간에 방문해야 좋다고 생각하지만 이는 반은 맞고 반은 틀린 이야기입니다. 여의도 노래방 내돈내산 방문기들을 보면 늦은 새벽보다는 저녁 식사 직후의 이른 시간</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0427.html">여의도 노래방 내돈내산 사례로 본 합정 노래방 추천정보의 핵심</a>
+        <p class="post-item__summary">성공적인 모임을 위한 노래방 선정 조건은 의외로 명확합니다. 인원 구성이 적절한지, 음향 시스템은 최신인지, 그리고 무엇보다 인원당 공간 활용도가 여유로운지를 먼저 따져야 합니다. 여의도 노래방 내</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0428.html">여의도 노래방 내돈내산 경험으로 본 연남 클럽 추천정보</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 경험이 많아질수록 자연스럽게 다른 유흥 공간에 눈을 돌리게 됩니다. 여러분은 활기찬 밤을 보낼 장소를 고를 때 가장 중요하게 생각하는 요소가 무엇인가요. 단순히 음악이 큰 곳</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0429.html">여의도 노래방 내돈내산 후기 신뢰도 판별과 합정 셔츠룸 추천정보</a>
+        <p class="post-item__summary">여의도 노래방 내돈내산 후기를 살펴보며 정보를 얻는 것처럼 합정 지역의 유흥 시설을 찾을 때도 검증 과정은 필수입니다. 우선 첫 번째 단계는 작성자가 방문한 시점이 최근 3개월 이내인지 확인하는 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/interview-002-1ndg0fx.html">2011 년 겨울, 이누카에가 아직 숨죽이던 그날 밤의 시계탑</a>
+        <p class="post-item__summary">Q: 데모판 시절에는 어떤 방식이 더 유리했나요?A: 저는 당시 개발 로그를 훑어보다니, Firelink Shrine 내벽 점프 조건이 살짝 다릅니다. 2011 년 초판에서 특정 프레임 단위로 입력</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">여의도 노래방 내돈내산 안내</a>
+        <p class="post-item__summary">여의도에서 노래방을 이용할 때 고려해야 할 사항이 있습니다. 직장 생활 후 퇴근하는 직장인이나 저녁 약속이 있는 모임까지, 다양한 상황 속에서 노래방을 찾는 이유가 다를 수 있습니다. 이때 중요한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">여의도 노래방 내돈내산</a>
+        <p class="post-item__summary">여의도 노래방 방문은 예상치 못한 변수가 있을 수 있으므로, 사전에 준비된 리스트를 확인하고 출발하는 것이 좋습니다. 내돈내산 방식은 직접 비용을 부담하며 이용하는 형태이므로, 예산 범위와 이용 시</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-7mccw2.html">Glumhaven 판별 스탯과 여의도 노래방 내돈내산, 가치 판단은 어디에 있나?</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">여의도 노래방 내돈내산 가이드</a>
+        <p class="post-item__summary">여의도 중심부에서 직장 동료나 친구와 함께 즐길 수 있는 노래방은 다양하게 위치해 있습니다. 출근길이나 퇴근 후 시간을 활용하여 가사나 보컬 톤을 꼼꼼히 확인할 수 있는 환경을 고려하는 경우가 많습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">normal 2</a>
+        <p class="post-item__summary">여의도 노래방은 다양한 업소가 존재하며, 각 업소마다 고유한 특징을 가지고 있습니다. 여의도 노래방 내돈내산을 알아보기 위해서는 우선 노래방의 종류와 특징을 파악하는 것이 중요합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">여의도 노래방 내돈내산 방문 전 알아두기</a>
+        <p class="post-item__summary">여의도 지역에는 많은 노래방 업소들이 위치해 있으며, 내 돈으로 즐기는 내돈내산 문화를 선호하는利用者들도 꾸준히 늘고 있습니다. 노래방을 찾을 때에는 먼저 해당 업소의 기본 이용 요금과 시간대별 할</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
