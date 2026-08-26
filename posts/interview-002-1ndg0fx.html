@@ -28,17 +28,17 @@
  <article>
  <h2>초기 버전과 출시 버전의 벽면 상호작용</h2>
 <p>Q: 데모판 시절에는 어떤 방식이 더 유리했나요?<br>A: 저는 당시 개발 로그를 훑어보다니, <code>Firelink Shrine</code> 내벽 점프 조건이 살짝 다릅니다. 2011 년 초판에서 특정 프레임 단위로 입력 시 골목 통로가 열렸지만, 최종 패치 이후에는 그 틈새가 좁혀졌습니다. ^^;</p>
-<p><img src="./assets/여의도 노래방 안내_00007_.png" alt="Dark Souls 1 Demo Version vs Release Version Map Comparison" loading="lazy" width="1344" height="768"></p>
+<p><img src="./assets/bpaas_00007_.png" alt="Dark Souls 1 Demo Version vs Release Version Map Comparison" loading="lazy" width="1344" height="768"></p>
 <p>A 의 해석: 기술적으로 볼 때 <code>Frame-perfect</code> 입력 타이밍이 변하지 않았다면, 아마도 <code>Collision Box</code>(충돌 박스) 의 재배치로 인해 물리 엔진 계산 값에 미세한 오차가 생겼을 거예요.</p>
 <p>Q: 왜 이러한 변화가 속도 기록에 영향을 미친다고 하죠?<br>A: 저도 궁금했답니다. 데모판의 특정 구간에서는 <code>Soul Link</code> 보너스 아이템이 더 자주 등장했고, 이를 이용해 병사들을 우회할 수 있었습니다. 하지만 출시 후 그 패턴이 무작위화되어 일정한 스킵 루트가 불안정해졌죠. ^^</p>
 <h2>패치로 막힌 프레임 단위 재현 조건</h2>
 <p>Q: 구체적으로 어떤 버전에서 문제가 발생했는지 알려주세요.<br>A: <code>v1.05</code> 이후 패치가 적용되면서, 초기 버전의 특정 벽면 점프가 <code>Input Buffer</code>(입력 버퍼) 에 저장되는 시간이 단축되었습니다. 즉, 같은 조작이라도 3 프레임만 늦으면 경로 탐색이 실패하는 상태죠.</p>
-<p><img src="./assets/여의도 노래방 안내_00128_.webp" alt="Dark Souls 1 Speedrun Glitch Skip Conditions" loading="lazy" width="1024" height="1024"></p>
+<p><img src="./assets/bpaas_00128_.webp" alt="Dark Souls 1 Speedrun Glitch Skip Conditions" loading="lazy" width="1024" height="1024"></p>
 <p>A 의 해석: 이는 단순히 조작 실수가 아니라, 엔진의 내부 로직이 업데이트되면서 <code>Physics State</code>(물리 상태) 가 재정의된 결과입니다. 여러분은 이를 단순한 버그가 아닌 '새로운 규칙'으로 받아들이시면 좋겠습니다. ^^;</p>
 <p>결말에 남기는 확인 질문<br>1. 현재 자신의 플레이 스타일에 맞춰 데모판 데이터를 참고하고 있나요?<br>2. 특정 구간에서 <code>Wall Jump</code>(벽 점프) 가 실패할 때, 입력 타이밍을 체크해 보신 적 있으세요?<br>3. 다음 업데이트 시 이러한 물리 엔진 변화가 다시 발생할 가능성이 궁금하지 않으신가요? ^^</p>
  </article>
      <nav class="post-pager" aria-label="글 이동">
-      <a class="post-pager__prev" href="../posts/gemini-coverage-20260722-0429.html">← 여의도 노래방 내돈내산 후기 신뢰도 판별과 합정 셔츠룸 추천정보</a>
+      <a class="post-pager__prev" href="../posts/gemini-coverage-20260722-0422.html">← 여의도 노래방 내돈내산 경험으로 비교해보는 홍대 노래방 추천정보 분석</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
       <a class="post-pager__next" href="../posts/juice-1.html">여의도 노래방 내돈내산 안내 →</a>
     </nav>
